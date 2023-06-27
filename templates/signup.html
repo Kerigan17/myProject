@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Вход</title>
+    <link href="../styles/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/common.css">
+    <link href="../styles/form.css" rel="stylesheet">
 </head>
-<body>
+
+<body class="d-flex align-items-center py-4 bg-body-tertiary">
+<main class="form-signin w-100 m-auto">
+    <form class="text-center">
+        <img class="mb-4" src="../static/images/logo.png" alt="logo" width="171">
+        <h1 class="mb-3">Регистрация</h1>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="fio" placeholder="ФИО">
+            <label for="fio">ФИО</label>
+        </div>
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="Электронная почта">
+            <label for="floatingInput">Электронная почта</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Пароль">
+            <label for="floatingPassword">Пароль</label>
+        </div>
+        <div class="form-floating mb-4">
+            <input type="password" class="form-control" id="floatingPasswordTwo" placeholder="Подтверждение пароля">
+            <label for="floatingPasswordTwo">Подтверждение пароля</label>
+        </div>
+
+        <button class="btn btn-primary w-100 py-2" type="submit">Вход</button>
+
+        <div class="link text-start mt-2">
+            Уже есть аккаунт? <a class="ms-2" href="login.html">Войдите в систему</a>
+        </div>
+    </form>
+</main>
 
 </body>
 </html>
