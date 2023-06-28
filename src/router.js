@@ -5,7 +5,7 @@ export class Router {
                 route: '#/signup',
                 title: 'Регистрация',
                 template: 'templates/signup.html',
-                styles: 'css/form.css',
+                styles: 'styles/form.css',
                 load: () => {
 
                 }
@@ -14,7 +14,7 @@ export class Router {
                 route: '#/login',
                 title: 'Вход',
                 template: '/templates/login.html',
-                styles: 'css/form.css',
+                styles: 'styles/form.css',
                 load: () => {
 
                 }
@@ -24,6 +24,7 @@ export class Router {
 
     async openRoute() {
         const newRoute = this.routs.find(item => {
+            console.log(item.route)
             return item.route === window.location.hash;
         })
 
