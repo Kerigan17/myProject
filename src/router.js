@@ -1,3 +1,5 @@
+import {Form} from "./components/form.js";
+
 export class Router {
     constructor() {
         this.routs = [
@@ -7,7 +9,7 @@ export class Router {
                 template: 'templates/signup.html',
                 styles: 'styles/form.css',
                 load: () => {
-
+                    new Form();
                 }
             },
             {
@@ -16,7 +18,7 @@ export class Router {
                 template: '/templates/login.html',
                 styles: 'styles/form.css',
                 load: () => {
-
+                    new Form();
                 }
             },
         ]
@@ -24,12 +26,11 @@ export class Router {
 
     async openRoute() {
         const newRoute = this.routs.find(item => {
-            console.log(item.route)
             return item.route === window.location.hash;
         })
 
         if (!newRoute) {
-            window.location.href = '#/';
+            window.location.href = '#/login';
             return;
         }
 

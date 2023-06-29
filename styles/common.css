@@ -69,3 +69,16 @@
 .bd-mode-toggle {
     z-index: 1500;
 }
+
+.link {
+    display: flex;
+}
+
+#link-button {
+    text-decoration: underline;
+    color: #0D6EFD;
+}
+
+#link-button:hover {
+    cursor: pointer;
+}

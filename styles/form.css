@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-    color: #052C65;
+    color: #052C65!important;
     font-size: 40px;
     font-weight: 500;
 }
