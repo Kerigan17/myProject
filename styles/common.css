@@ -82,3 +82,11 @@
 #link-button:hover {
     cursor: pointer;
 }
+
+h1 {
+    color: #052C65;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
