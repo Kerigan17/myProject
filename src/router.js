@@ -1,4 +1,5 @@
 import {Form} from "./components/form.js";
+import {Home} from "./components/home.js";
 
 export class Router {
     constructor() {
@@ -19,6 +20,15 @@ export class Router {
                 styles: 'styles/form.css',
                 load: () => {
                     new Form();
+                }
+            },
+            {
+                route: '#/home',
+                title: 'Главная',
+                template: '/templates/home.html',
+                styles: 'styles/home.css',
+                load: () => {
+                    new Home();
                 }
             },
         ]
