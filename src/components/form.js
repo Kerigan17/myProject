@@ -1,6 +1,5 @@
 export class Form {
     constructor() {
-        this.agreeElement = null;
         this.processElement = null;
         this.passwordOne = null;
         this.passwordTwo = null;
@@ -30,7 +29,12 @@ export class Form {
         }
 
         this.processElement = document.getElementById('process');
+        this.processElement.onclick = () => {
+            //that.checkUserProfile()
+            that.processForm();
+        };
 
+        //если hash === #/signup
         if (window.location.hash === '#/signup') {
             this.fields.push(
                 {
@@ -53,14 +57,12 @@ export class Form {
                 location.href = '#/login';
             };
 
-            this.passwordOne = document.getElementById('password');
-            this.passwordTwo = document.getElementById('passwordTwo');
-
-            this.processElement.onclick = function () {
-                if (that.passwordOne.value !== that.passwordTwo.value) {
+            this.processElement.onclick = () => {
+                if (!that.passwordsChecked()) {
                     alert('Пароли не совпадают')
                 } else {
                     alert('Регистрация завершена')
+                    //that.createUserProfile();
                     that.processForm();
                 }
             };
@@ -68,10 +70,17 @@ export class Form {
 
         this.fields.forEach(item => {
             item.element = document.getElementById(item.id);
-            item.element.onchange = function () {
+            item.element.onchange = function ()  {
                 that.validateField.call(that, item, this);
             }
         });
+    }
+
+    passwordsChecked() {
+        this.passwordOne = document.getElementById('password');
+        this.passwordTwo = document.getElementById('passwordTwo');
+
+        return this.passwordOne.value === this.passwordTwo.value
     }
 
     validateField(field, element) {
@@ -88,19 +97,27 @@ export class Form {
     validateForm() {
         const validForm = this.fields.every(item => item.valid);
         if (validForm) {
-            console.log(this.processElement)
             this.processElement.removeAttribute('disabled')
         } else {
-            console.log(this.processElement)
             this.processElement.setAttribute('disabled', 'disabled')
         }
 
         return validForm;
     }
 
+    createUserProfile() {
+
+    }
+
+    checkUserProfile() {
+
+    }
+
     processForm() {
         if (this.validateForm()) {
-            location.href = '#/'
+            location.href = '#/home'
+        } else {
+            location.href = '#/login'
         }
     }
 }
